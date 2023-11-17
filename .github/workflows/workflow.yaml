@@ -1,0 +1,21 @@
+name: Push to master
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    # the checkout action persists the passed credentials by default
+    # subsequent git commands will pick them up automatically
+    - uses: actions/checkout@v2
+      with:
+        token: ${{secrets.PAT}}
+    - run: |
+        echo "oi pedro" > file.txt
+
+    - run: cat file.txt
+
