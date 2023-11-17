@@ -12,8 +12,7 @@ jobs:
     # the checkout action persists the passed credentials by default
     # subsequent git commands will pick them up automatically
     - uses: actions/checkout@v2
-      with:
-        token: ${{secrets.PAT}}
+      
     - run: |
         echo "oi pedro" > file.txt
 
